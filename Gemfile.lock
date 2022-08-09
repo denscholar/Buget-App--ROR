@@ -94,6 +94,7 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise-bootstrap-views (1.1.0)
     digest (3.1.0)
     erubi (1.11.0)
     font-awesome-rails (4.7.0.8)
@@ -235,6 +236,7 @@ DEPENDENCIES
   capybara
   debug
   devise
+  devise-bootstrap-views (~> 1.0)
   font-awesome-rails
   importmap-rails
   jbuilder
