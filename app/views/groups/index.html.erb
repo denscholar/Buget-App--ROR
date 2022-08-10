@@ -1,0 +1,34 @@
+<div class="bg-fond_gris h-screen">
+  <div class="d-flex justify-content-between" >
+        <h2 class="font-bold text-stone-300 text-lg" >CATEGORIES</h2>
+        <p><%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary btn-lg font-bold text-stone-300 text-lg" %></p>
+      </div>
+  </div>
+
+  <div class="p-2">
+      <% if @groups %>
+        <% @groups.each do |group| %>
+        <div class="md:max-w-xl bg-white shadow-lg mt-1.5">
+        <a href = "/users/<%= group.user_id %>/groups/<%= group.id %>/expenses">
+        <div class="grid grid-cols-5  h-1/6 items-center ">
+          <div class=""> 
+
+          </div>
+            <div class="flex flex-col gap-1  col-span-3 text-text_gray_1">
+            <p><%= group.name%></p>
+            <p><%= group.user_name(group.user_id) %> </p>
+            </div>
+
+          <div class="font-bold text-text_gray " > Total: $<%= group.total_spent(group.id)%></div>
+        </div>
+        </a>
+        </div>
+        <% end %>
+      <% end %>
+  </div>
+
+  <div class="w-full absolute bottom-0 left-0 bg-fond_vert h-12 p-3 mb-1 flex items-center text-center">
+    <%= link_to 'ADD A NEW CATEGORY', new_user_group_path(current_user), :class => "inline-block w-full border border-10 text-xl border-white px-6 py-2.5 bg-fond_vert text-stone-300 font-medium text-xs leading-tight uppercase shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out" %>
+  <div>
+
+</div>
