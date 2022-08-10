@@ -1,8 +1,8 @@
 class Group < ApplicationRecord
-    belongs_to :user
-    has_many :expenses
+  belongs_to :user
+  has_many :expenses
 
-    validates :name, presence: true, length: { minimum: 3, maximum: 100 }
+  validates :name, presence: true, length: { minimum: 3, maximum: 100 }
 
   def user_name(user_id)
     User.find(user_id).name

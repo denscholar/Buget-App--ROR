@@ -1,6 +1,15 @@
-.add-button{
-    background-color: red;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+.fixed-bottom{
+    height: 3.5rem;
+}
+
+button{
+    color: white !important;
+    font-size: 1.2rem !important;
+}
+
+p.name{
+    display: flex !important;
+    align-items: center !important;
+    margin: 0 !important;
+    font-size: 1.2rem;
 }
