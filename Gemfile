@@ -70,3 +70,8 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem 'devise'
+gem "font-awesome-rails"
+gem 'devise-bootstrap-views', '~> 1.0'
+gem 'cancancan'
+gem 'letter_opener'
