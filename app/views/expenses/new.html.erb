@@ -1,0 +1,67 @@
+<div class="bg-fond_gris h-screen">
+  <%= form_with(model: @expense,  url:"/users/#{current_user.id}/groups/#{@group_id}/expenses" ) do |form| %>
+    <div class="flex justify-between bg-fond_blue h-14 items-center px-2">
+      <div class="fixed-top bg-primary align-items-center py-3">
+        <div class="d-flex justify-content-between align-items-center px-3" >
+          <%= link_to  user_group_expenses_url(user_id: current_user.id, group_id: 
+          @group_id) do %>
+            <%= image_tag "back.png", style: 'height:10px; width:auto;' %>
+          <% end  %>
+          <h3 class="text-sm m-0" >New Add Expense</h3>
+        </div>
+      </div>
+      <div class="actions text-stone-300">
+        <%=  form.submit class: 'btn btn-primary fixed-bottom d-flex justify-content-center align-items-center' %>
+      </div>
+    </div>
+    <% if @expense.errors.any? %>
+      <div style="color: red">
+        <h2><%= pluralize(@expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
+        <ul>
+          <% @expense.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+    <br>
+    <div class= "form-group-custom" >
+      <%= form.text_field :name, placeholder: "Enter expense name", autofocus: true, class: "form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          mb-3
+          focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" %>
+    </div>
+    <div class= "form-group-custom" >
+      <%= form.number_field :amount, step: :any, placeholder: "Enter expense amount", autofocus: true, class: "
+        form-control
+        block
+        w-full
+        px-3
+        py-1.5
+        text-base
+        font-normal
+        text-gray-700
+        bg-white bg-clip-padding
+        border border-solid border-gray-300
+        rounded
+        transition
+        ease-in-out
+        m-0
+        focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none
+      " %>
+    </div>
+    <div>
+    </div>
+  <% end %>
+</div>

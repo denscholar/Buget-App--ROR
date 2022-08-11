@@ -13,3 +13,7 @@ p.name{
     margin: 0 !important;
     font-size: 1.2rem;
 }
+
+section{
+    margin-top: 8rem;
+}
