@@ -14,8 +14,11 @@
   </head>
   <body>
     <div class="container">
-      <p class="notice p-0"><%= notice %></p>
-      <p class="alert p-0"><%= alert %></p>
+      <% flash.each do |name, msg| %>
+        <div class="alert alert-info">
+          <%= msg %>
+        </div>
+      <% end %>
       <%= yield %>
     </div>
   </body>
