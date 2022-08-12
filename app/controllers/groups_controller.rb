@@ -8,7 +8,6 @@ class GroupsController < ApplicationController
   end
 
   def create
-    # render plain: params[:group].inspect
     @group = Group.new(group_params)
     @group.user_id = current_user.id
     if @group.save
