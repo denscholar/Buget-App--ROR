@@ -10,14 +10,14 @@ RSpec.describe 'User index page', type: :feature do
     scenario ' I can log in with correct user details' do
       fill_in 'Email', with: 'user@email.com'
       fill_in 'Password', with: '123456'
-      click_button 'Log in'
+      click_button 'Next'
       expect(page).to have_content('Signed in successfully.')
     end
 
     scenario ' I cannot log in with incorrect user details' do
       fill_in 'Email', with: 'usr@email.cm'
       fill_in 'Password', with: '123456'
-      click_button 'Log in'
+      click_button 'Next'
       expect(page).to have_content 'Invalid Email or password'
     end
   end

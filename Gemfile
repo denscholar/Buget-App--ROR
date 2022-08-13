@@ -79,4 +79,3 @@ gem 'devise'
 gem 'devise-bootstrap-views', '~> 1.0'
 gem 'font-awesome-rails'
 gem 'htmlbeautifier'
-

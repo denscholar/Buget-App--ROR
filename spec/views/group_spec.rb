@@ -9,7 +9,7 @@ RSpec.describe 'Categories', type: :feature do
       visit '/users/sign_in'
       fill_in 'Email', with: 'user@email.com'
       fill_in 'Password', with: '123456'
-      click_button 'Log in'
+      click_button 'Next'
     end
 
     scenario 'I see page header' do

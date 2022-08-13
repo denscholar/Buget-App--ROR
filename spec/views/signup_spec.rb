@@ -11,7 +11,7 @@ RSpec.describe 'User index page', type: :feature do
       fill_in 'Email', with: 'user@gmail.com'
       fill_in 'Password: 6 characters minimum.', with: '123456'
       fill_in 'Confirm Password', with: '123456'
-      click_button 'Sign up'
+      click_button 'Next'
     end
   end
 end
