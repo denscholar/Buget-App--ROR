@@ -12,11 +12,11 @@
 
 ## Live Demo
 
-[Live Demo link](https://shielded-citadel-30319.herokuapp.com/)
+[Live Demo link](https://my-budget-app-ror.herokuapp.com/)
 
 
 ## Loom video
-[Loom video link]()
+[Loom video link](https://www.loom.com/share/a9b6a9b36c834bfc8ba266db37e0fcb0)
 
 
 # Getting Started
