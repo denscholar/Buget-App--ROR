@@ -1,17 +1,17 @@
-#group_icon{
-    padding: 0.4rem;
-    outline: none;
+#group_icon {
+  padding: 0.4rem;
+  outline: none;
 }
 
-.arrow{
-    width: 2rem;
+.arrow {
+  width: 2rem;
 }
 
-button{
-    color: white !important;
-    font-size: 1.2rem !important;
+button {
+  color: white !important;
+  font-size: 1.2rem !important;
 }
 
-.bg-fond_gris{
-    margin-top: 7rem !important;
+.bg-fond_gris {
+  margin-top: 7rem !important;
 }
