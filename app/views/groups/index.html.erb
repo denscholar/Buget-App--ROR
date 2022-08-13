@@ -1,0 +1,27 @@
+<div class="fixed-top bg-primary align-items-center py-3">
+  <div class="d-flex justify-content-between align-items-center px-3" >
+    <h3 class="text-sm m-0" >CATEGORIES</h3>
+    <%= button_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-outline-primary font-bold text-stone-300" %>
+  </div>
+</div>
+<div class="p-3 mt-5">
+  <% if @groups %>
+    <% @groups.each do |group| %>
+      <div class="md:max-w-xl bg-white shadow mt-3 p-3">
+        <a href = "/users/<%= group.user_id %>/groups/<%= group.id %>/expenses" class='text-decoration-none'>
+          <div class="grid grid-cols-5  h-1/6 d-flex justify-content-between align-items-center ">
+            <div class="image d-flex justify-content-between gap-2">
+              <%= image_tag "#{group.icon}.png", style: 'height:40px; width:auto;' %>
+              <p class='name'><%= group.name %></p>
+            </div>
+            <div class="font-bold text-text_gray " > Total: $<%= group.total_spent(group.id)%></div>
+          </div>
+          <small class='px-5'>Created <%= time_ago_in_words(group.created_at) %> ago</small>
+        </a>
+      </div>
+    <% end %>
+  <% end %>
+  <p class=''><%= link_to 'ADD A NEW CATEGORY', new_user_group_path(current_user), class: 'btn btn-primary fixed-bottom d-flex justify-content-center align-items-center' %></p>
+</div>
+
+

@@ -1,0 +1,43 @@
+<div class="fixed-top bg-primary align-items-center py-3">
+  <div class="d-flex justify-content-between align-items-center px-3" >
+    <%= link_to  user_groups_path do %>
+      <%= image_tag "back.png", style: 'height:10px; width:auto;' %>
+    <% end  %>
+    <h3 class="text-sm m-0" >Expenses</h3>
+  </div>
+</div>
+<div class="p-3 mt-5">
+  <% if @expenses.count > 0 %>
+      <div class="md:max-w-xl bg-white shadow mt-3 p-3">
+          <div class="grid grid-cols-5  h-1/6 d-flex justify-content-between align-items-center ">
+            <div class="image d-flex justify-content-between gap-2">
+              <%= image_tag "#{@group_id.icon}.png", style: 'height:40px; width:auto;' %>
+              <p class="font-bold text-lg"> Category: <%= @group_id.name %> </p>
+            </div>
+            <div>
+            <p class="text-text_gray font-bold text-xl">Total spent: $<%= @expenses.first.total_expenses(@group_id) %></p>
+            </div>
+          </div>
+      </div>
+    <% end %>
+</div>
+  <div class="p-2">
+  <% @expenses.each do |expense| %>
+      <div class="md:max-w-xl bg-white shadow mt-3 p-3">
+          <div class="grid grid-cols-5  h-1/6 d-flex justify-content-between align-items-center ">
+            <div class="image d-flex justify-content-between gap-2">
+              <%= image_tag "#{@group_id.icon}.png", style: 'height:40px; width:auto;' %>
+               <div><p><%= @group_id.name %>:</p> </div>
+                <div> <p><%= expense.name %></p> </div>
+            </div>
+            <div class="font-bold text-text_gray " ><p>$ <%= expense.amount %></p></div>
+          </div>
+        </a>
+      </div>
+    <% end %>
+  </div>
+
+<div class="w-full absolute bottom-0 left-0 bg-fond_vert h-12 p-3 mb-1 flex items-center text-center">
+  <%= link_to "Add a new expense", new_user_group_expense_path(user_id: current_user.id, group_id: @group_id), class: 'btn btn-primary fixed-bottom d-flex justify-content-center align-items-center' %>
+</div>
+</div>
